@@ -1,0 +1,73 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #navigation {
+        background-color: #6eadff;
+        width: 100%;
+        height: 9.3vh;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+    }
+
+    .logo {
+        height: 70%;
+        cursor: pointer;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        margin-left: 12px;
+    }
+
+    .tab {
+        background-color: #6ecaff;
+        border: 3px solid #6ecaffad;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 8px 20px;
+        height: 52%;
+        flex: 0 0 140px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        .tab { padding: 6px 10px; flex: 0 0 100px; font-size: 0.9rem; }
+    }
+</style>
+<head>
+    <title>ManuelMZN - About Me</title>
+    <link rel="icon" type="image/png" href="../assets/icon.png">
+</head>
+<div id="navigation">
+    <img class="logo" src="../assets/manuelmzn.png" alt="logo" onclick="load('../index')">
+    <div class="tabs">
+        <button onclick="load('../news')" class="tab">News/Changelog</button>
+        <button onclick="load('../chat')" class="tab">Chatroom</button>
+        <button onclick="load('../projects/index')" class="tab">Projects</button>
+        <button onclick="load('../about')" class="tab">About me</button>
+        <button onclick="load('../ppl')" class="tab">Cool people</button>
+        <button onclick="load('../guestbook')" class="tab">Guestbook</button>
+    </div>
+</div>
+<div>
+    <iframe src="iabout.html" style="width: 100%; height: 90%; border: none;"></iframe>
+</div>
+<script>
+    function load(page) {
+        window.location.href = `${page}.html`;
+    }
+</script>

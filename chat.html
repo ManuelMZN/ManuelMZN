@@ -1,0 +1,112 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background-color: rgb(184, 253, 255);
+        text-align: center;
+    }
+
+    #navigation {
+        background-color: #6eadff;
+        width: 100%;
+        height: 9.3vh;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+    }
+
+    .logo {
+        height: 70%;
+        cursor: pointer;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        margin-left: 12px;
+    }
+
+    .tab {
+        background-color: #6ecaff;
+        border: 3px solid #6ecaffad;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 8px 20px;
+        height: 52%;
+        flex: 0 0 140px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #banner {
+        background-color: #fffbec;
+        width: 100%;
+        border-bottom: 3px solid #b6b3a9;
+        border-top: 3px solid #fffaeb;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        font-size: 1.3rem;
+    }
+
+    .content {
+        background-image: url("../assets/pin.png");
+        border: 1.5vw groove rgb(161, 131, 75) !important;
+        height: 75%;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .chat {
+        width: 90%;
+        background-color: rgb(212, 195, 39);
+        border: 3px outset rgba(212, 195, 39, 0.534);
+        height: 10%;
+        text-align: left;
+        margin-top: 3px;
+    }
+
+    @media (max-width: 700px) {
+        .tab { padding: 6px 10px; flex: 0 0 100px; font-size: 0.9rem; }
+    }
+</style>
+<head>
+    <title>ManuelMZN - Chatroom</title>
+    <link rel="icon" type="image/png" href="../assets/icon.png">
+</head>
+<div id="navigation">
+    <img class="logo" src="../assets/manuelmzn.png" alt="logo" onclick="load('../index')">
+    <div class="tabs">
+        <button onclick="load('../news')" class="tab">News/Changelog</button>
+        <button onclick="load('../chat')" class="tab">Chatroom</button>
+        <button onclick="load('../projects/index')" class="tab">Projects</button>
+        <button onclick="load('../about')" class="tab">About me</button>
+        <button onclick="load('../ppl')" class="tab">Cool people</button>
+        <button onclick="load('../guestbook')" class="tab">Guestbook</button>
+    </div>
+</div>
+<div>
+    <div id="banner">Welcome to the Chatroom!</div>
+    <span class="content" style="width: 25%">
+        <h2 style="color: white; font-family: Arial, Helvetica, sans-serif; text-decoration: underline;">Select Chat</h3>
+        <button onclick="document.getElementById('chat').innerHTML = `<iframe src='https://www5.cbox.ws/box/?boxid=963340&boxtag=w1Qj0W' width='100%' height='100%' style='border: none;'></iframe>`;" class="chat">ManuelMZN <br> <a style="font-size: 0.7rem;">Chat with people on this Site</a></button>
+        <button onclick="document.getElementById('chat').innerHTML = `<a style='color: white'>Disclaimer: JustNiko's Website isn't online yet. It doesn't really make sense to use this chat right now.</a><iframe src='https://www5.cbox.ws/box/?boxid=963391&boxtag=1sxtnk' width='100%' height='95%' style='border: none;'></iframe>`;" class="chat">JustMZN <br> <a style="font-size: 0.7rem;">Chat with people on this Site & JustNiko's Site</a></button>
+        <button onclick="window.location.href = 'guestbook.html'" class="chat">Guestbook <br> <a style="font-size: 0.7rem;">Sign my Guestbook</a></button>
+    </span>
+    <span class="content" style="width: 74%" id="chat"></span>
+</div>
+<script>
+    function load(page) {
+        window.location.href = `${page}.html`;
+    }
+    document.getElementById('chat').innerHTML = `<iframe src='https://www5.cbox.ws/box/?boxid=963340&boxtag=w1Qj0W' width='100%' height='100%' style='border: none;'></iframe>`;
+</script>

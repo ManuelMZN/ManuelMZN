@@ -1,0 +1,37 @@
+<style>
+    body {
+        background-image: url('../assets/pin.png');
+        background-repeat: repeat;
+        background-position: center;
+        margin: 0;
+        padding: 20px;
+        font-family:Arial, Helvetica, sans-serif;
+        text-align: center;
+        color: white;
+    }
+
+    .button {
+        width: 10%;
+        border: 4px solid white;
+        transform: rotate(var(--post-rotate, 0deg));
+    }
+</style>
+<div style="font-family:Arial, Helvetica, sans-serif; text-align: center;" id="x">
+    <h1>Net Neighbors</h1>
+        <a href="https://corkcorner.space" target="_blank"><img src="https://www.corkcorner.space/assets/cork_link.png" title="Cork Corner" class="button"></a>
+        <a href="https://powerduck.neocities.org" target="_blank"><img src="https://powerduck.neocities.org/images/pdbadge-88x31.png" alt="powerduck" title="powerduck" target="_blank" class="button"></a>
+    <img src="https://adriansblinkiecollection.neocities.org/dividers/cautiondivider2.gif" width="100%">
+    <h1>Cool People</h1>
+        <a href="https://onio.neocities.org" title="Visit Onio Café" target="_blank"><img src="https://onio.neocities.org/thebutton.gif" alt="Come Chat With Us!" class="button"></a>
+        <a title="c-nder" href="https://c-nder.neocities.org/" target="_blank"><img src="https://c-nder.neocities.org/buttons/c-nder-button.gif" class="button"></a>
+        <a href="https://daniele63.com/" target="_blank"><img src="assets/danieles.png" title="Daniele's Website" class="button"></a>
+        <a href="https://adriansblinkiecollection.neocities.org/" target="_blank"><img src="assets/buttons.gif" title="Adrien's Blinkie Collection" class="button"></a>
+        <a href="https://mynamespixel.neocities.org/" target="_blank"><img src="https://mynamespixel.neocities.org/heart.png" alt="Pixel's safe place" title="Pixel's safe place" target="_blank" class="button"></a>
+        <a href="https://winbows.neocities.org/" target="_blank"><img src="https://winbows.neocities.org/resources/winbows-btn.png" class="button" title="Winbows XP" alt="Winbows XP"/></a>
+</div>
+<script>
+    x.querySelectorAll('.button').forEach(button => {
+        const angle = `${(Math.random() * 4 - 2).toFixed(2)}deg`;
+        button.style.setProperty('--post-rotate', angle);
+    });
+</script>

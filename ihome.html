@@ -1,0 +1,228 @@
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url('../assets/pin.png');
+        background-size: stretch;
+    }
+
+    #idkLOL {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .post {
+        width: 350px;
+        margin: 20px;
+        padding: 20px;
+        color: black;
+        background-color: rgb(212, 195, 39);
+        border: 3px outset rgba(212, 195, 39, 0.534);
+        box-sizing: border-box;
+        text-align: center;
+        transform: rotate(var(--post-rotate, 0deg));
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto; 
+    }
+
+    .date {
+        font-size: 0.8rem;
+        color: black;
+    }
+
+    .iframe-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        box-sizing: border-box;
+        transform-origin: top left;
+        pointer-events: none;
+    }
+
+</style>
+<div id="idkLOL"></div>
+<script>
+    const x = document.getElementById('idkLOL');
+    x.innerHTML = x.innerHTML + `<h1 style="color: white;"> News </h1> <a style="color: white;"> Welcome to my Website <br> I hope you like it! Here are the most recent things I published here: </a>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added a comment system! <br>
+        <span class="date"> 01.06.2026 - 18:24 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="article/index.html#003.html"></iframe>
+        </div> <br>
+        I added comments via. Cusdis. They can be acessed under all Projects in the projects tab.<br> 
+        <button onclick="load('article/index.html#003')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added 2 more old projects! <br>
+        <span class="date"> 31.05.2026 - 15:55 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="projects/index.html"></iframe>
+        </div> <br>
+        I added "Ball Run" & "The Snake" to the Projects Tab.<br> 
+        <button onclick="load('projects/index')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> New Net Neighbor <br>
+        <span class="date"> 31.05.2026 - 10:39 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        Powerduck is now a Net Neighbor! <br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Redesigned the Chatroom Tab. <br>
+        <span class="date"> 30.05.2026 - 10:39 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="chat.html"></iframe>
+        </div> <br>
+        I redesigned the Chatroom tab to match the new Homepage. It also has a new feature now.<br> 
+        <button onclick="load('chat')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added new People to the cool people tab. <br>
+        <span class="date"> 30.05.2026 - 10:39 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        Binbows XP is now linked in the cool people tab.<br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> First Net Neighbor <br>
+        <span class="date"> 29.05.2026 - 17:00 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        Cork Corner is now a Net Neighbor!<br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Homepage Redesigned <br>
+        <span class="date"> 28.05.2026 - 15:30 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="article/index.html#002.html"></iframe>
+        </div> <br>
+        I Redesigned the Homepage!<br> 
+        <button onclick="load('article/index.html#002')">See More</button> </div>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added a Chat! <br>
+        <span class="date"> 27.05.2026 - 17:38 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="chat.html"></iframe>
+        </div> <br>
+        I added a chatroom! You can Acess it from the Top bar but as soon as I'm done with the Homepage redesign it'll be acessable from the homepage too.<br> 
+        <button onclick="load('chat')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added new People to the cool people tab. <br>
+        <span class="date"> 27.05.2026 - 17:38 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        Pixel's safe place & Powerduck are now linked in the cool people tab.<br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> First project added! <br>
+        <span class="date"> 27.05.2026 - 15:55 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="projects/project/index.html#001.html"></iframe>
+        </div> <br>
+        I added "Silly Cat wants to play Minecraft Create on Windows XP - An Animation" to the Projects Tab.<br> 
+        <button onclick="load('projects/project/index.html#001')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added new People to the cool people tab. <br>
+        <span class="date"> 27.05.2026 - 15:43 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        Cork Corner is now linked in the cool people tab.<br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Oops! <br>
+        <span class="date"> 27.05.2026 - 14:39 CET  </span> </h2> </div>
+        I just noticed that the post directly below ("New Feature of the site!") had the wrong description. I fixed it now but it was kinda funny.<br> `;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> New Feature of the site! <br>
+        <span class="date"> 26.05.2026 - 18:56 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="article/index.html#001.html"></iframe>
+        </div> <br>
+        Click on the button to see what it is!<br> 
+        <button onclick="load('article/index.html#001')">See More</button> </div>`;
+
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added new People to the cool people tab. <br>
+        <span class="date"> 26.05.2026 - 16:22 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        Adrians Blinkie Collection is now linked in the cool people tab.<br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added a guestbook. <br>
+        <span class="date"> 26.05.2026 - 12:43 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="guestbook.html"></iframe>
+        </div> <br>
+        Please sign it!<br> 
+        <button onclick="load('guestbook')">See More</button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Added people to the Cool People Tab now. <br>
+        <span class="date"> 25.05.2026 - 19:00 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        Onio Café, c-nder and Daniele are now linked in the cool people tab.<br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Cool People Tab now (kinda) working! <br>
+        <span class="date"> 23.05.2026 - 17:23 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="ppl.html"></iframe>
+        </div> <br>
+        I addet the Cool People Tab now. There just isn't anyone linked yet.<br> 
+        <button onclick="load('ppl')">See More</button> </div>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> About Me Tab now working! <br>
+        <span class="date"> 23.05.2026 - 16:30 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="about.html"></iframe>
+        </div> <br>
+        I addet the About Me Tab now. It isn't much though...<br> 
+        <button onclick="load('about')">See More</button> </div>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Projects Tab now working! <br>
+        <span class="date"> 20.05.2026 - 09:21 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="projects/index.html"></iframe>
+        </div> <br>
+        I addet the projects Tab now. There just aren't any projects yet. <br> 
+        <button onclick="load('projects/index')">See More</button> </div>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Yay! I got the post system working! <br>
+        <span class="date"> 20.05.2026 - 09:12 CET  </span> </h2> </div>
+        This isn't an big announcement though XD <br>
+        But I'm still happy that it works! <br> It's also the first post here! </div>`;
+    
+    x.querySelectorAll('.post').forEach(post => {
+        const angle = `${(Math.random() * 4 - 2).toFixed(2)}deg`;
+        post.style.setProperty('--post-rotate', angle);
+    });
+
+    x.querySelectorAll('.content').forEach(iframe => {
+        const angle = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
+        iframe.style.setProperty('--iframe-rotate', angle);
+    });
+
+    function load(page) {
+        window.location.href = `${page}.html`;
+    }
+</script>
