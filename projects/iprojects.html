@@ -1,0 +1,94 @@
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: url('../assets/pin.png');
+        background-size: stretch;
+    }
+
+    #idkLOL {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    .post {
+        width: 35%;
+        margin: 20px;
+        padding: 20px;
+        color: black;
+        background-color: rgb(212, 195, 39);
+        border: 3px outset rgba(212, 195, 39, 0.534);
+        box-sizing: border-box;
+        text-align: center;
+        transform: rotate(var(--post-rotate, 0deg));
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto; 
+    }
+
+    .date {
+        font-size: 0.8rem;
+        color: black;
+    }
+
+    .iframe-wrapper {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px solid black;
+        box-sizing: border-box;
+        transform-origin: top left;
+        pointer-events: none;
+    }
+
+</style>
+<div id="idkLOL"></div>
+<script>
+    const x = document.getElementById('idkLOL');
+    x.innerHTML = x.innerHTML + `<h1 style="color: white;"> Projects </h1> <a style="color: white;">Here is a list of most of my projects.<br>
+        Some of them are even usable right here in your browser! </a>`;
+
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Ball Run <br>
+        <span class="date"> 31.05.2026 - 11:24 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="project/index.html#003.html"></iframe>
+        </div> <br>
+        The Title Explains it LOL.<br> 
+        <button><a href="project/index.html#003.html" target="_blank" style="color: black; Text-decoration: none;">See More</a></button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> The Snake <br>
+        <span class="date"> 31.05.2026 - 11:22 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="project/index.html#002.html"></iframe>
+        </div> <br>
+        The Title Explains it LOL.<br> 
+        <button><a href="project/index.html#002.html" target="_blank" style="color: black; Text-decoration: none;">See More</a></button> </div>`;
+    
+    x.innerHTML = x.innerHTML + ` <div class="post"> <div> <h2> Silly Cat wants to play Minecraft Create on Windows XP - An Animation <br>
+        <span class="date"> 27.05.2026 - 15:55 CET  </span> </h2> </div>
+        <div class="iframe-wrapper">
+            <iframe class="content" src="project/index.html#001.html"></iframe>
+        </div> <br>
+        The Title Explains it LOL.<br> 
+        <button><a href="project/index.html#001.html" target="_blank" style="color: black; Text-decoration: none;">See More</a></button> </div>`;
+    
+    x.querySelectorAll('.post').forEach(post => {
+        const angle = `${(Math.random() * 4 - 2).toFixed(2)}deg`;
+        post.style.setProperty('--post-rotate', angle);
+    });
+
+    x.querySelectorAll('.content').forEach(iframe => {
+        const angle = `${(Math.random() * 8 - 4).toFixed(2)}deg`;
+        iframe.style.setProperty('--iframe-rotate', angle);
+    });
+</script>
