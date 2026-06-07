@@ -1,0 +1,103 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    #navigation {
+        background-color: #6eadff;
+        width: 100%;
+        height: 9.3vh;
+        display: flex;
+        align-items: center;
+        padding: 0 12px;
+    }
+
+    .logo {
+        height: 70%;
+        cursor: pointer;
+    }
+
+    .tabs {
+        display: flex;
+        gap: 12px;
+        justify-content: flex-start;
+        align-items: center;
+        flex: 1;
+        margin-left: 12px;
+    }
+
+    .tab {
+        background-color: #6ecaff;
+        border: 3px solid #6ecaffad;
+        font-family: Arial, Helvetica, sans-serif;
+        color: white;
+        font-size: 1rem;
+        cursor: pointer;
+        padding: 8px 20px;
+        height: 52%;
+        flex: 0 0 140px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    @media (max-width: 600px) {
+        .tab { padding: 6px 10px; flex: 0 0 100px; font-size: 0.9rem; }
+    }
+</style>
+<head>
+    <title>ManuelMZN - Play</title>
+    <link rel="icon" type="image/png" href="https://manuelmzn.netlify.app/assets/icon.png">
+</head>
+<div id="navigation">
+    <img class="logo" src="https://manuelmzn.netlify.app/assets/manuelmzn.png" alt="logo" onclick="load('https://manuelmzn.netlify.app/index')">
+    <div class="tabs">
+        <button onclick="load('https://manuelmzn.netlify.app/news')" class="tab">News/Changelog</button>
+        <button onclick="load('https://manuelmzn.netlify.app/chat')" class="tab">Chatroom</button>
+        <button onclick="load('https://manuelmzn.netlify.app/projects/index')" class="tab">Projects</button>
+        <button onclick="load('https://manuelmzn.netlify.app/about')" class="tab">About me</button>
+        <button onclick="load('https://manuelmzn.netlify.app/ppl')" class="tab">Cool people</button>
+        <button onclick="load('https://manuelmzn.netlify.app/guestbook')" class="tab">Guestbook</button>
+    </div>
+</div>
+<div id="window"></div>
+<script>
+    const Content = document.getElementById('window');
+    
+    Content.innerHTML = `
+        <iframe src="${window.location.hash.replace('#', '')}" id="game" style="display: flex; flex-direction: column; width: 100%; height: 70%; border: none;"></iframe>
+        <h1 id="game-title" style="font-family: Arial, Helvetica, sans-serif;"></h1>
+        <a href="../index.html" style="font-family: Arial, Helvetica, sans-serif;">Back to Projects Page</a>
+        <h1 style="font-family: Arial, Helvetica, sans-serif; text-align: center;">Comments</h1>
+        <div id="cusdis_thread" style="height: 100%;"
+        data-host="https://cusdis.com"
+        data-app-id="0d82881b-cbb9-4168-a726-004cfc0797f1"
+        data-page-id="projects${window.location.hash.replace('#', '')}"
+        data-page-url="https://manuelmzn.netlify.app/projects/index${window.location.hash}"
+        data-page-title="ManuelMZN - Play"
+        ></div>
+    `;
+    
+    const iframe = document.getElementById('game');
+    const titleElement = document.getElementById('game-title');
+
+    iframe.addEventListener('load', () => {
+    setTimeout(() => {
+        try {
+            const iframeTitle = iframe.contentDocument?.title || "Issue Loading Title...";
+            titleElement.textContent = iframeTitle;
+        } catch (error) {
+            console.error("Issue loading title", error);
+            titleElement.textContent = "Loaded"; 
+        }
+    }, 50); 
+    });
+
+    function load(page) {
+        window.location.href = `${page}.html`;
+    }
+</script>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
